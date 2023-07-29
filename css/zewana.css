@@ -75,6 +75,7 @@ a {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .header .container .logo{
@@ -109,6 +110,7 @@ a {
     align-items: center;
     height: var(--heading-height);
     padding: 0 30px;
+    font-size: 18px;
     color: black;
     transition: var(--main-transition-duration);
     position: relative;
@@ -140,6 +142,97 @@ a {
 
 .header .container .main-nav > li > a:hover::before{
     width: 100%;
+}
+
+.header .megamenu{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+    padding: 30px;
+    background-color: white;
+    border-bottom: 3px solid var(--main-color);
+    display: flex;
+    gap: 40px;
+    top: calc(100% + 50px);
+    opacity: 0;
+    transition: top var(--main-transition-duration), opacity var(--main-transition-duration);
+}
+
+.header .container .main-nav > li:last-child:hover .megamenu{
+    top: calc(100% + 1px);
+    opacity: 1;
+    z-index: 99;
+}
+
+@media (max-width: 767px){
+    .header .megamenu{
+        flex-direction: column;
+        gap: 0;
+        padding: 5px;
+    }
+}
+
+.header .megamenu .links{
+    min-width: 250px;
+}
+
+@media (max-width: 991px){
+    .header .megamenu .links{
+        flex: 1;
+    }
+}
+
+.header .megamenu .links li{
+    position: relative;
+}
+
+.header .megamenu .links li:not(:last-child){
+    border-bottom: 1px solid #e9e6e6;
+}
+
+@media (max-width: 767px){
+    .header .megamenu .links:first-of-type li:last-child{
+        border-bottom: 1px solid #e9e6e6;
+    }
+}
+
+.header .megamenu .links li::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #fafafa;
+    transition: width var(--main-transition-duration);
+}
+
+.header .megamenu .links li:hover::before{
+    width: 100%;
+}
+
+.header .megamenu .links li a{
+    display: block;
+    color: var(--main-color);
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.header .megamenu .links li a i{
+    margin-right: 10px;
+}
+
+.header .megamenu .image img{
+    max-width: 100%;
+}
+
+@media (max-width: 991px){
+    .header .megamenu .image{
+        display: none;
+    }
 }
 /* End header */
 
