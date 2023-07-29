@@ -141,5 +141,114 @@ a {
 .header .container .main-nav > li > a:hover::before{
     width: 100%;
 }
-
 /* End header */
+
+/* Start landing */
+.landing{
+    position: relative;
+    margin-bottom: 300px;
+}
+
+.landing::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -75px;
+    width: 100%;
+    height: 100%;
+    background-color: #ececec;
+    transform: skewY(-6deg);
+    z-index: -1;
+}
+
+.landing .container{
+    display: flex;
+    align-items: center;
+    height: calc(100vh - var(--heading-height));
+    position: relative;
+    padding-bottom: 120px;
+}
+
+.landing .container .image img{
+    position: relative;
+    width: 600px;
+    animation: up-and-down 5s linear infinite;
+}
+
+@media (max-width: 991px){
+    .landing .container .image{
+        display: none;
+    }    
+}
+
+.landing .container .go-down{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--main-color);
+    transition: var(--main-transition-duration);
+}
+
+.landing .container .go-down:hover{
+    color: var(--main-color-alt);
+}
+
+.landing .container .go-down i{
+    animation: bouncing 1.5s infinite;
+}
+
+.landing .container .text{
+    flex: 1;
+}
+
+.landing .container .text h1{
+    margin: 0 !important;
+    letter-spacing: -2px;
+    font-size: 40px;
+}
+
+.landing .container .text p{
+    line-height: 1.7;
+    font-size: 23px;
+    margin: 5px 0 0;
+    color: #666;
+    max-width: 500px;
+}
+
+@media (max-width: 991px){
+    .landing .container .text{
+        text-align: center;
+        width: 100%;
+    }
+    .landing .container .text h1{
+        font-size: 32px;
+    }
+    .landing .container .text p{
+        margin: 10px auto;
+        font-size: 22px;
+    }   
+}
+/* End landing */
+
+/* Start animation */
+@keyframes up-and-down {
+    0%, 100%{
+        top: 0;
+    }
+    50%{
+        top: -50px;
+    }
+}
+
+@keyframes bouncing{
+    0%, 80% ,100%{
+        transform: translateY(0);
+    }
+    70%, 90%{
+        transform: translateY(-15px);
+    }
+}
+/* End animation */
+
+
