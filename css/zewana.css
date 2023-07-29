@@ -60,7 +60,53 @@ a {
 /* End global rules */
 
 /* Start components */
+.main-title{
+    text-transform: uppercase;
+    border: 2px solid black;
+    width: fit-content;
+    margin: 300px auto;
+    padding: 10px 20px;
+    font-size: 30px;
+    position: relative;
+    transition: var(--main-transition-duration);
+    z-index: 1;
+}
 
+.main-title::before,
+.main-title::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.main-title::before{
+    left: -30px;
+}
+
+.main-title::after{
+    right: -30px;
+}
+
+.main-title:hover::before{
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+}
+
+.main-title:hover::after{
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+}
+
+.main-title:hover{
+    transition-delay: 0.5s;
+    border: 2px solid white;
+    color: white;
+}
 /* End components */
 
 /* Start header */
@@ -239,7 +285,6 @@ a {
 /* Start landing */
 .landing{
     position: relative;
-    margin-bottom: 300px;
 }
 
 .landing::before{
@@ -342,6 +387,34 @@ a {
         transform: translateY(-15px);
     }
 }
+
+@keyframes left-move{
+    50%{
+        left: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    100%{
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+@keyframes right-move{
+    50%{
+        right: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    100%{
+        right: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
 /* End animation */
-
-
