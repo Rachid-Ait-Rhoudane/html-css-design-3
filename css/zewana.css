@@ -528,6 +528,12 @@ a {
     background-color: #03a9f4;
 }
 
+@media (max-width: 767px){
+    .features .container .box .image::before{
+        top: -1px;
+    }
+}
+
 .features .container .box .image::after{
     content: "";
     position: absolute;
