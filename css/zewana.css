@@ -655,6 +655,60 @@ a {
 }
 /* End features */
 
+/* Start testimonials */
+.testimonials{
+    padding: var(--main-section-padding) 0;
+    background-color: var(--section-background-color);
+}
+
+.testimonials .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonials .container .box{
+    position: relative;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
+    border-radius: 6px;
+}
+
+.testimonials .container .box img{
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    outline: 10px solid var(--section-background-color);
+    top: -20%;
+    right: 0;
+}
+
+.testimonials .container .box h3{
+    margin: 10px 0 0;
+}
+
+
+.testimonials .container .box .title{
+    display: block;
+    margin: 10px 0 0;
+    color: #777;
+}
+
+.testimonials .container .box .rating{
+    margin: 10px 0 0;
+}
+
+.testimonials .container .box .rating i:not(.far){
+    color: #ffc107;
+}
+
+.testimonials .container .box p{
+    margin: 10px 0;
+    color: #777;
+    line-height: 1.4;
+}
+/* End testimonials */
 
 /* Start animation */
 @keyframes up-and-down {
