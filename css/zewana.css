@@ -813,6 +813,103 @@ a {
 }
 /* End team members */
 
+/* Start services */
+.services{
+    padding: var(--main-section-padding) 0;
+    background-color: var(--section-background-color);
+}
+
+.services .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.services .container .box{
+    background-color: white;
+    transition: transform var(--main-transition-duration);
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    counter-increment: services;
+    position: relative;
+}
+
+.services .container .box:hover{
+    transform: translateY(-10px);
+}
+
+.services .container .box::before{
+    content: "";
+    background-color: var(--main-color);
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 0;
+    transition: width var(--main-transition-duration);
+}
+
+.services .container .box:hover::before{
+    width: 100%;
+}
+
+.services .container .box i{
+    display: block;
+    width: fit-content;
+    margin: 30px auto 20px;
+    color: #d5d5d5;
+}
+
+.services .container .box h3{
+    margin: 0 0 40px;
+    text-align: center;
+    font-size: 22px;
+    color: var(--main-color);
+}
+
+.services .container .box .info{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.services .container .box .info::before{
+    content: "0"counter(services);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.services .container .box .info::after{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 22.5%;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    background-color: #d5d5d5;
+    transform: skewX(-40deg);
+}
+
+.services .container .box .info a{
+    padding: 0 5px;
+    color: var(--main-color);
+}
+/* End services */
+
 /* Start animation */
 @keyframes up-and-down {
     0%, 100%{
