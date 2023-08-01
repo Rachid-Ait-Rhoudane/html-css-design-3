@@ -1242,6 +1242,161 @@ a {
 }
 /* End latest events */
 
+/* Start pricing */
+.pricing{
+    padding: var(--main-section-padding) 0;
+    background-color: var(--section-background-color);
+}
+
+.pricing .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.pricing .container .box{
+    background-color: white;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    position: relative;
+}
+
+@media (min-width: 1200px){
+    .pricing .container .most-popular{
+        transform: translateY(-20px);
+    }
+}
+
+.pricing .container .box::before,
+.pricing .container .box::after{
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 0;
+    background-color: #f6f6f6;
+    transition: width var(--main-transition-duration);
+}
+
+.pricing .container .box::before{
+    top: 0;
+    left: 0;
+}
+
+.pricing .container .box::after{
+    bottom: 0;
+    right: 0;
+}
+
+.pricing .container .box:hover::before,
+.pricing .container .box:hover::after{
+    width: 100%;
+}
+
+.pricing .container .box .title,
+.pricing .container .box .label{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.pricing .container .most-popular .label::before{
+    content: "Most Popular";
+    color: white;
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 22px;
+    position: absolute;
+    z-index: 2;
+    top: -40.8px;
+    right: 30px;
+    height: 150px;
+    width: 30px;
+    background-color: var(--main-color);
+}
+
+.pricing .container .most-popular .label::after{
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 80px;
+    right: 30px;
+    border-style: solid;
+    border-width: 25px;
+    border-color: transparent transparent white transparent;
+}
+
+.pricing .container .box img{
+    position: relative;
+    z-index: 1;
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 40px;
+}
+
+.pricing .container .box .price{
+    position: relative;
+    z-index: 1;
+    margin: 0 0 40px;
+}
+
+.pricing .container .box .price .amount{
+    font-size: 62px;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    color: var(--main-color);
+}
+
+.pricing .container .box .price .time{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.pricing .container .box ul{
+    position: relative;
+    z-index: 1;
+    margin: 0 0 40px;
+}
+
+.pricing .container .box ul li{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #eee;
+}
+
+.pricing .container .box ul li i{
+    font-size: 18px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.pricing .container .box a{
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: fit-content;
+    margin: 0 auto 40px;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+.pricing .container .box a:hover{
+    background-color: var(--main-color);
+    color: white;
+}
+/* End pricing */
+
 /* Start animation */
 @keyframes up-and-down {
     0%, 100%{
