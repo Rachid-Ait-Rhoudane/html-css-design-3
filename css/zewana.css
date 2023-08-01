@@ -910,6 +910,66 @@ a {
 }
 /* End services */
 
+/* Start our skills */
+.our-skills{
+    padding: var(--main-section-padding) 0;
+}
+
+.our-skills .container{
+    display: flex;
+}
+
+@media (max-width: 991px){
+    .our-skills .container img{
+        display: none;
+    }
+}
+
+.our-skills .container .skills{
+    flex: 1;
+}
+
+.our-skills .container .skills .skill{
+    margin: 0 0 20px;
+}
+
+.our-skills .container .skills .skill h3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px;
+}
+
+.our-skills .container .skills .skill h3 span{
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--main-color);
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.our-skills .container .skills .skill .the-progress{
+    width: 100%;
+    height: 30px;
+    background-color: #d5d5d5;
+}
+
+.our-skills .container .skills .skill .the-progress span{
+    display: block;
+    height: 100%;
+    background-color: var(--main-color);
+    animation: fill-the-progress 0.5s linear;
+}
+
+@keyframes fill-the-progress{
+    0%{
+        width: 0;
+    }
+}
+/* End our skills */
+
 /* Start animation */
 @keyframes up-and-down {
     0%, 100%{
