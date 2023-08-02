@@ -1467,6 +1467,94 @@ a {
 
 /* End video */
 
+/* start stats */
+.stats{
+    padding: var(--main-section-padding) 0;
+    margin-bottom: 300px;
+    background-image: url('../images/stats.jpg');
+    position: relative;
+}
+
+.stats::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.stats h2{
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 40px;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.stats .container{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.stats .container .box{
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.stats .container .box::before,
+.stats .container .box::after{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 0;
+    background-color: var(--main-color);
+    transition: height var(--main-transition-duration);
+}
+
+.stats .container .box::before{
+    bottom: 0;
+    left: -3px;
+}
+
+.stats .container .box::after{
+    top: 0;
+    right: -3px;
+}
+
+.stats .container .box:hover::before,
+.stats .container .box:hover::after{
+    height: 100%;
+}
+
+.stats .container .box i{
+    display: block;
+    width: fit-content;
+    margin: 0 auto 10px;
+}
+
+.stats .container .box .number{
+    display: block;
+    font-size: 52px;
+    font-weight: bold;
+    margin: 0 auto 10px;
+}
+
+.stats .container .box .text{
+    display: block;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+/* End stats */
+
+
 /* Start animation */
 @keyframes up-and-down {
     0%, 100%{
