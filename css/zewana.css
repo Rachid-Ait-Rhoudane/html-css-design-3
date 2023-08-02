@@ -1397,6 +1397,76 @@ a {
 }
 /* End pricing */
 
+/* Start video */
+.videos{
+    padding: var(--main-section-padding) 0;
+}
+
+.videos .container{
+    display: flex;
+    justify-content: center;
+}
+
+.videos .container .holder{
+    display: flex;
+    border: 1px solid #ddd;
+    background-color: var(--section-background-color);
+}
+
+@media (max-width: 991px){
+    .videos .container .holder{
+        flex-direction: column;
+    }
+}
+
+.videos .container .holder .list .name{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.videos .container .holder .list ul li{
+    padding: 20px;
+    background-color: white;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+}
+
+.videos .container .holder .list ul li:hover{
+    background-color: #fafafa;
+    color: var(--main-color);
+}
+
+.videos .container .holder .list ul li span{
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin: 10px 0 0;
+}
+
+.videos .container .holder .preview{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding: 10px;
+    gap: 10px;
+}
+
+.videos .container .holder .preview img{
+    max-width: 100%;
+}
+
+.videos .container .holder .preview .info{
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* End video */
+
 /* Start animation */
 @keyframes up-and-down {
     0%, 100%{
