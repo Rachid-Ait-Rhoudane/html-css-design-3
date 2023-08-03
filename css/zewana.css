@@ -1470,7 +1470,6 @@ a {
 /* start stats */
 .stats{
     padding: var(--main-section-padding) 0;
-    margin-bottom: 300px;
     background-image: url('../images/stats.jpg');
     position: relative;
 }
@@ -1554,6 +1553,327 @@ a {
 }
 /* End stats */
 
+/* Start discount */
+.discount{
+    display: flex;
+}
+
+@media (max-width: 991px){
+    .discount{
+        flex-direction: column;
+    }
+}
+
+.discount .image{
+    background-image: url('../images/discount-background1.jpg');
+    position: relative;
+    padding: 20px 80px;
+    width: 50%;
+}
+
+@media (max-width: 991px){
+    .discount .image{
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px){
+    .discount .image{
+        padding: 20px 10px;
+    }
+}
+
+.discount .image::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+    opacity: 0.98;
+}
+
+.discount .image .content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.discount .image .content h2{
+    letter-spacing: -2px;
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+    margin-top: 60px;
+}
+
+.discount .image .content p{
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: white;
+}
+
+.discount .image .content img{
+    max-width: 300px;
+}
+
+.discount .form{
+    padding: 20px 80px;
+    width: 50%;
+}
+@media (max-width: 991px){
+    .discount .form{
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px){
+    .discount .form{
+        padding: 20px 10px;
+    }
+}
+
+.discount .form .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.discount .form .content h2{
+    letter-spacing: -2px;
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
+.discount .form .content form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.discount .form .content form input[type="text"],
+.discount .form .content form input[type="email"]{
+    margin: 20px 0;
+    width: 80%;
+    height: 50px;
+    padding-left: 15px;
+    caret-color: var(--main-color);
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent transparent #ddd transparent;
+    background-color: #f9f9f9;
+}
+
+.discount .form .content form input[type="text"]:focus,
+.discount .form .content form input[type="email"]:focus,
+.discount .form .content form textarea:focus{
+    outline: none;
+}
+
+.discount .form .content form textarea{
+    margin-bottom: 20px;
+    width: 80%;
+    height: 150px;
+    padding: 15px 0 0 15px;
+    caret-color: var(--main-color);
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent transparent #ddd transparent;
+    background-color: #f9f9f9;
+}
+
+.discount .form .content form input[type="submit"]{
+    width: 60%;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 10px;
+    padding: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.discount .form .content form input[type="submit"]:hover{
+    background-color: var(--main-color-alt);
+}
+
+@media (max-width: 767px){
+    .discount .form .content form input[type="submit"]{
+        width: 40%;
+        padding: 10px 0;
+    }
+}
+/* Start discount */
+
+/* Start footer */
+footer{
+    padding: var(--main-section-padding) 0;
+    background-color: #191919;
+    width: 100%;
+    position: relative;
+}
+
+footer .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+footer .container .box h3{
+    font-size: 52px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+footer .container .box .social{
+    display: flex;
+    gap: 10px;
+    margin: 10px 0 0;
+}
+
+footer .container .box .social li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #313131;
+    color: #B9B9B9;
+    font-size: 22px;
+}
+
+footer .container .box .social li .facebook:hover{
+    background-color: #1877f2;
+}
+
+footer .container .box .social li .twitter:hover{
+    background-color: #1da1f2;
+}
+
+footer .container .box .social li .youtube:hover{
+    background-color: #ff0000;
+}
+
+footer .container .box p{
+    color: #B9B9B9;
+    line-height: 1.8;
+    margin: 10px 0 0;
+}
+
+@media (max-width: 991px){
+    footer .container .box:first-of-type{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .container .box .social{
+        width: fit-content;
+        margin: 10px auto 0;
+    }
+}
+
+footer .container .box .links li{
+    padding: 13px;
+    transition: var(--main-transition-duration);
+}
+
+footer .container .box .links li:not(:last-child){
+    border-bottom: 1px solid #444;
+}
+
+footer .container .box .links li:hover{
+    transform: translateX(10px);
+}
+
+footer .container .box .links li a{
+    color: #B9B9B9;
+    display: block;
+    width: fit-content;
+    position: relative;
+    left: 8px;
+    transition: var(--main-transition-duration);
+}
+
+footer .container .box .links li:hover a{
+    color: white;
+}
+
+footer .container .box .links li a::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\F101";
+    font-weight: 900;
+    color: var(--main-color);
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 991px){
+    footer .container .box .links li a{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+footer .container .box .line{
+    display: flex;
+    align-items: center;
+    margin: 0 0 25px;
+    gap: 20px;
+}
+
+footer .container .box .line i{
+    color: var(--main-color);
+    font-size: 25px;
+}
+
+footer .container .box .line .info{
+    color: #B9B9B9;
+    line-height: 1.8;
+}
+
+@media (max-width: 991px){
+    footer .container .box .line{
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+footer .container .footer-gallery{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+footer .container .footer-gallery img{
+    width: 30%;
+    border: 5px solid white;
+}
+
+footer .container .copyright{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    color: #B9B9B9;
+    border-top: 1px solid #B9B9B9;
+    text-align: center;
+    padding: 20px 0;
+}
+/* End footer */
 
 /* Start animation */
 @keyframes up-and-down {
